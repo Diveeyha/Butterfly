@@ -50,13 +50,12 @@ def main():
     #     pp.savefig(fig, bbox_inches='tight')
     #     pp.close()
 
-
     fig, ax = plt.subplots(figsize=(8.5, 11))
     fig.suptitle('Virginia Butterfly Tracker')
     ax.axis('tight')
     ax.axis('off')
-    the_table = ax.table(cellText=edited_df.values, colLabels=edited_df.columns, cellLoc='center',
-                         loc='top', colWidths=[0.05, 0.2, 0.5])
+    ax.table(cellText=edited_df.values, colLabels=edited_df.columns, cellLoc='center',
+             loc='top', colWidths=[0.05, 0.2, 0.5])
 
     pp = PdfPages("foo.pdf")
     pp.savefig(fig, bbox_inches='tight')
