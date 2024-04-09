@@ -21,18 +21,19 @@ def main():
 
         column_config={
             "Count": st.column_config.NumberColumn(
+                "#",
                 min_value=0,
                 step=1,
                 width="small",
                 format="%d",
             ),
             "Species": st.column_config.TextColumn(
-                width="medium",
+                width="small",
                 disabled=True
             ),
             "Comments": st.column_config.TextColumn(
                 width="large",
-                max_chars=50
+                max_chars=100
             )
         },
         hide_index=True,
