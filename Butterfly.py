@@ -72,7 +72,7 @@ def main():
 # col1.number_input("Count", value=None, step=1, label_visibility="collapsed")
 # col2.write("Monarch")
 if __name__ == '__main__':
-    st.set_page_config(page_icon='🦋')
+    st.set_page_config(page_icon='🦋', layout="wide")
     st.markdown("""<style>
                 body {text-align: center}
                 p {text-align: center} 
