@@ -21,7 +21,6 @@ def main():
 
         column_config={
             "Count": st.column_config.NumberColumn(
-                "#",
                 min_value=0,
                 step=1,
                 width="small",
