@@ -5,7 +5,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 
 def main():
-    st.title("Virginia Butterfly Tracker 🦋")
+    st.title("VA Butterfly Tracker 🦋")
 
     df = pd.DataFrame(
             [
@@ -27,7 +27,7 @@ def main():
                 format="%d",
             ),
             "Species": st.column_config.TextColumn(
-                width="small",
+                width="medium",
                 disabled=True
             ),
             "Comments": st.column_config.TextColumn(
