@@ -49,8 +49,8 @@ def main():
     # image4 = Image.open(projectDir + '\Butterfly_Photos\Black_Tiger_Outer.jpg')
     # col3.image(image4)
     st.write(projectDir)
-    inner = glob.glob(f'{projectDir}\Butterfly_Photos\Inner/*.jpg')
-    outer = glob.glob(f'{projectDir}\Butterfly_Photos\Outer/*.jpg')
+    inner = glob.glob(f'{projectDir}\Inner/*.jpg')
+    outer = glob.glob(f'{projectDir}\Outer/*.jpg')
     df = pd.DataFrame(
             {
                 'Species': ["Black Tiger Swallowtail", "Zebra Swallowtail"],
