@@ -21,7 +21,7 @@ def image_formatter(url):
         current_image = Image.open(BytesIO(response.content))
         image_link = f'<img src="data:image/jpeg;base64,{image_to_base64(current_image)}" style="width:100%">'
         fig_caption = 'Photo By: '+(re.search(r'.*-([^.]+)', url.removesuffix('jpg'))[1]).replace("_", " ")
-        return f'<p style="color:Orange; font-size: 12px;">{image_link + fig_caption}</p>'
+        return f'<p style="color:Gray; font-size: 12px;">{image_link + fig_caption}</p>'
     except Exception as e:
         # st.error(f"Error fetching image from URL: {e}")
         return None
