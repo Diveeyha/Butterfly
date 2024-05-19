@@ -41,12 +41,14 @@ def main():
     # Todo change font size of species? Make photos have zoom
     df = pd.DataFrame(
         {
-            'Species': ["American Lady", "American Snout", "Cabbage White", "Cloudless Sulfur", "Common Buckeye", "Great Southern White",
+            'Species': ["American Lady", "American Snout", "Cabbage White", "Cloudless Sulfur", "Common Buckeye",
+                        "Gemmed Satyr", "Great Southern White",
                         "Monarch", "Pearl Crescent", "Painted lady", "Question Mark", "Sleepy orange", "Variegated Fritillary"],
             'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_Lady_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_snout_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cabbage_White_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cloudless_Sulfur_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Gemmed_Satyr_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Common_Buckeye_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Great_Southern_White_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Monarch_Outer-Michelle_Gianvecchio.jpg",
@@ -61,6 +63,7 @@ def main():
                       "",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Common_Buckeye_Inner-Michelle_Gianvecchio.jpg",
+                      "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Great_Southern_White_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Monarch_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pearl_Crescent_Inner-Michelle_Gianvecchio.jpg",
