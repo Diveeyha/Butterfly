@@ -102,11 +102,24 @@ def main():
 
     df4 = pd.DataFrame(
         {
-            'Species': ["Salt Marsh Skipper", "Long-tailed Skipper"],
-            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Salt_Marsh_Skipper_Outer-Michelle_Gianvecchio.jpg",
-                      ""],
-            'Inner': ["",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Long_tailed_Skipper_Inner-Michelle_Gianvecchio.jpg"],
+            'Species': ["Clouded Skipper", "Dun Skipper", "Fiery Skipper", "Horace's Duskywing", "Little Glassywing",
+                        "Long-tailed Skipper", "Salt Marsh Skipper", "Zabulon Skipper"],
+            'Outer': ["",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Fiery_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Little_Glassywing_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Salt_Marsh_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zabulon_Skipper_Outer-Michelle_Gianvecchio.jpg"],
+            'Inner': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Clouded_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Dun_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Horaces_Duskywing_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Little_Glassywing_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Long_tailed_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Zabulon_Skipper_Inner-Michelle_Gianvecchio.jpg"],
 
         }
     )
