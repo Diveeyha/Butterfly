@@ -42,8 +42,8 @@ def main():
     df = pd.DataFrame(
         {
             'Species': ["American Lady", "American Snout", "Cabbage White", "Cloudless Sulfur", "Common Buckeye",
-                        "Gemmed Satyr", "Great Southern White",
-                        "Monarch", "Pearl Crescent", "Painted lady", "Question Mark", "Sleepy orange", "Variegated Fritillary"],
+                        "Gemmed Satyr", "Great Southern White", "Monarch", "Pearl Crescent", "Painted lady",
+                         "Question Mark", "Sleepy orange", "Summer Azure", "Variegated Fritillary"],
             'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_Lady_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_snout_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cabbage_White_Outer-Michelle_Gianvecchio.jpg",
@@ -56,6 +56,7 @@ def main():
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Painted_Lady_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Question_Mark_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Sleepy_orange_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Summer_Azure_Outer-Michelle_Gianvecchio.jpg",
                       ""
                       ],
             'Inner': ["",
@@ -69,6 +70,7 @@ def main():
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pearl_Crescent_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Painted_Lady_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Question_Mark_Inner-Michelle_Gianvecchio.jpg",
+                      "",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Variegated_Fritillary_Inner-Michelle_Gianvecchio.jpg"
                       ],
@@ -102,22 +104,31 @@ def main():
 
     df4 = pd.DataFrame(
         {
-            'Species': ["Clouded Skipper", "Dun Skipper", "Fiery Skipper", "Horace's Duskywing", "Little Glassywing",
-                        "Long-tailed Skipper", "Salt Marsh Skipper", "Zabulon Skipper"],
+            'Species': ["Aaron's Skipper", "Broad-winged Skipper", "Clouded Skipper", "Dun Skipper", "Fiery Skipper",
+                        "Horace's Duskywing", "Little Glassywing", "Long-tailed Skipper", "Ocola Skipper",
+                        "Salt Marsh Skipper", "Silver-spotter Skipper", "Zabulon Skipper"],
             'Outer': ["",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Broad_winged_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Fiery_Skipper_Outer-Michelle_Gianvecchio.jpg",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Little_Glassywing_Outer-Michelle_Gianvecchio.jpg",
                       "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Ocola_Skipper_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Salt_Marsh_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zabulon_Skipper_Outer-Michelle_Gianvecchio.jpg"],
-            'Inner': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Clouded_Skipper_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Dun_Skipper_Outer-Michelle_Gianvecchio.jpg",
+            'Inner': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Aarons_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Broad_winged_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Clouded_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Dun_Skipper_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Horaces_Duskywing_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Little_Glassywing_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Long_tailed_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "",
+                      "",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Zabulon_Skipper_Inner-Michelle_Gianvecchio.jpg"],
 
