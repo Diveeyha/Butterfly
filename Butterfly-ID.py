@@ -34,7 +34,8 @@ def convert_df(input_df):
 
 
 def main():
-    st.title("Butterflies of Coastal Virginia 🦋")
+    st.title("Butterflies of")
+    st.subheader("Coastal Virginia 🦋")
     st.divider()
 
     # Todo put expander in first column with species explanation, side-by-side comparison?
