@@ -34,81 +34,59 @@ def convert_df(input_df):
 
 
 def main():
-    st.title("Coastal Virginia")
-    st.subheader("Butterflies 🦋")
+    st.title("Coastal Virginia Butterflies 🦋")
 
     # Todo put expander in first column with species explanation, side-by-side comparison?
     # Todo change font size of species? Make photos have zoom
-    df = pd.DataFrame(
+    df2 = pd.DataFrame(
         {
-            'Species': ["American Lady", "American Snout", "Cabbage White", "Carolina Satyr", "Clouded Sulfur",
-                        "Cloudless Sulfur", "Common Buckeye", "Eastern Comma",
-                        "Eastern Gemmed-satyr", "Great Southern White", "Monarch", "Pearl Crescent", "Painted lady",
-                         "Question Mark", "Red Admiral", "Red-spotted Purple",
-                        "Sleepy orange", "Spring/Summer Azure", "Variegated Fritillary"],
-            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_Lady_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_snout_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cabbage_White_Outer-Michelle_Gianvecchio.jpg",
+            'Species': ["Black Swallowtail", "Eastern Tiger Swallowtail (Female)",
+                        "Eastern Black Tiger Swallowtail (Female)", "Giant Swallowtail", "Palamedes Swallowtail",
+                        "Pipevine Swallowtail", "Spicebush Swallowtail", "Zebra Swallowtail"],
+            'Outer': ["",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Black_Tiger_Outer-Michelle_Gianvecchio.jpg",
                       "",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cloudless_Sulfur_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Common_Buckeye_Outer-Michelle_Gianvecchio.jpg",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Gemmed_Satyr_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Great_Southern_White_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Monarch_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Pearl_Crescent_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Painted_Lady_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Question_Mark_Outer-Michelle_Gianvecchio.jpg",
                       "",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Sleepy_orange_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Summer_Azure_Outer-Michelle_Gianvecchio.jpg",
-                      ""
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zebra_Swallowtail_Outer-Michelle_Gianvecchio.jpg",
                       ],
             'Inner': ["",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Tiger_Swallowtail_Inner_Female-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Black_Tiger_Inner-Michelle_Gianvecchio.jpg",
                       "",
-                      "",
-                      "",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Common_Buckeye_Inner-Michelle_Gianvecchio.jpg",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Great_Southern_White_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Monarch_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pearl_Crescent_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Painted_Lady_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Question_Mark_Inner-Michelle_Gianvecchio.jpg",
-                      "",
-                      "",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Variegated_Fritillary_Inner-Michelle_Gianvecchio.jpg"
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Palamedes_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pipevine_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Spicebush_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Zebra_Swallowtail_Inner-Michelle_Gianvecchio.jpg"
                       ],
+
         }
     )
-
-    html_view = convert_df(df)
-    st.markdown(html_view, unsafe_allow_html=True)
+    st.subheader("Swallowtails (Papilionidae)")
+    html_view2 = convert_df(df2)
+    st.markdown(html_view2, unsafe_allow_html=True)
     st.divider()
 
 
     df3 = pd.DataFrame(
         {
-            'Species': ["Banded Hairstreak", "Eastern-tailed Blue", "Red-banded Hairstreak"],
-            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Banded_Hairstreak_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Eastern_tailed_Blue_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Red_banded_Hairstreak_Outer-Michelle_Gianvecchio.jpg"
+            'Species': ["Cabbage White", "Clouded Sulfur", "Cloudless Sulfur", "Sleepy orange"],
+            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cabbage_White_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cloudless_Sulfur_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Sleepy_orange_Outer-Michelle_Gianvecchio.jpg"
                       ],
             'Inner': ["",
+                      "",
                       "",
                       ""
                       ],
         }
     )
 
-    st.subheader("Hairstreaks")
+    st.subheader("Whites and Sulfurs (Pieridae)")
     html_view3 = convert_df(df3)
     st.markdown(html_view3, unsafe_allow_html=True)
     st.divider()
@@ -116,9 +94,78 @@ def main():
 
     df4 = pd.DataFrame(
         {
+            'Species': ["Eastern-tailed Blue", "Gray Hairstreak", "Red-banded Hairstreak", "Spring Azure",
+                        "Summer Azure"],
+            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Eastern_tailed_Blue_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Gray_Hairstreak_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Red_banded_Hairstreak_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Summer_Azure_Outer-Michelle_Gianvecchio.jpg",
+                      ],
+            'Inner': ["",
+                      "",
+                      "",
+                      "",
+                      ""
+                      ],
+        }
+    )
+
+    st.subheader("Gossamer wings (Lycaenidae)")
+    html_view4 = convert_df(df4)
+    st.markdown(html_view4, unsafe_allow_html=True)
+    st.divider()
+
+
+    df5 = pd.DataFrame(
+        {
+            'Species': ["American Lady", "American Snout", "Carolina Satyr", "Common Buckeye", "Eastern Comma",
+                        "Gemmed Satyr", "Little Wood Satyr", "Monarch", "Painted lady", "Pearl Crescent",
+                        "Question Mark", "Red Admiral", "Red-spotted Purple", "Variegated Fritillary"],
+            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_Lady_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_snout_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Common_Buckeye_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Gemmed_Satyr_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Little_Wood_Satyr_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Monarch_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Painted_Lady_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Pearl_Crescent_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Question_Mark_Outer-Michelle_Gianvecchio.jpg",
+                      "",
+                      "",
+                      ""
+                      ],
+            'Inner': ["",
+                      "",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Common_Buckeye_Inner-Michelle_Gianvecchio.jpg",
+                      "",
+                      "",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Monarch_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Painted_Lady_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pearl_Crescent_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Question_Mark_Inner-Michelle_Gianvecchio.jpg",
+                      "",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Variegated_Fritillary_Inner-Michelle_Gianvecchio.jpg"
+                      ],
+        }
+    )
+
+    st.subheader("Brushfoots (Nymphalidae)")
+    html_view5 = convert_df(df5)
+    st.markdown(html_view5, unsafe_allow_html=True)
+    st.divider()
+
+
+    df6 = pd.DataFrame(
+        {
             'Species': ["Aaron's Skipper", "Broad-winged Skipper", "Clouded Skipper", "Dun Skipper", "Fiery Skipper",
                         "Horace's Duskywing", "Little Glassywing", "Long-tailed Skipper", "Ocola Skipper",
-                        "Salt Marsh Skipper", "Silver-spotter Skipper", "Zabulon Skipper"],
+                        "Salt Marsh Skipper", "Silver-spotted Skipper", "Zabulon Skipper"],
             'Outer': ["",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Broad_winged_Skipper_Outer-Michelle_Gianvecchio.jpg",
                       "",
@@ -146,43 +193,39 @@ def main():
 
         }
     )
-    st.subheader("Skippers")
-    html_view4 = convert_df(df4)
-    st.markdown(html_view4, unsafe_allow_html=True)
+    st.subheader("Skippers (Hesperiidae)")
+    html_view6 = convert_df(df6)
+    st.markdown(html_view6, unsafe_allow_html=True)
     st.divider()
 
-    df2 = pd.DataFrame(
-        {
-            'Species': ["Black Swallowtail", "Eastern Tiger Swallowtail (Female)", "Black Tiger Swallowtail (Female)", "Palamedes Swallowtail",
-                        "Pipevine Swallowtail", "Spicebush Swallowtail", "Zebra Swallowtail"],
-            'Outer': ["",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Black_Tiger_Outer-Michelle_Gianvecchio.jpg",
-                      "",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zebra_Swallowtail_Outer-Michelle_Gianvecchio.jpg",
-                      ],
-            'Inner': ["",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Tiger_Swallowtail_Inner_Female-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Black_Tiger_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Palamedes_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pipevine_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Spicebush_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Zebra_Swallowtail_Inner-Michelle_Gianvecchio.jpg"
-                      ],
 
-        }
-    )
-    st.subheader("Swallowtails")
-    html_view2 = convert_df(df2)
-    st.markdown(html_view2, unsafe_allow_html=True)
-    st.divider()
 
     # df = pd.DataFrame(
     #     {
-    #         'Species': ["Eastern Tiger Swallowtail (Female)", "Black Tiger Swallowtail (Female)", "Zebra Swallowtail", "Banded Hairstreak",
-    #                     "Red-banded Hairstreak", "American snout", "Painted lady", "Sleepy orange", "Salt Marsh Skipper", "Long-tailed Skipper"],
+    #         'Species': [
+    #             "American Lady", "American Snout", "Cabbage White", "Carolina Satyr", "Clouded Sulfur",
+    #             "Cloudless Sulfur", "Common Buckeye", "Eastern Comma", "Gemmed Satyr", "Great Southern White",
+    #             "Little Wood Satyr", "Monarch", "Painted lady", "Pearl Crescent", "Question Mark", "Red Admiral",
+    #             "Red-spotted Purple", "Sleepy orange", "Spring/Summer Azure", "Variegated Fritillary"
+    #             "Eastern-tailed Blue", "Gray Hairstreak", "Red-banded Hairstreak"
+    #             "Aaron's Skipper", "Broad-winged Skipper", "Clouded Skipper", "Dun Skipper", "Fiery Skipper",
+    #             "Horace's Duskywing", "Little Glassywing", "Long-tailed Skipper", "Ocola Skipper",
+    #             "Salt Marsh Skipper", "Silver-spotted Skipper", "Zabulon Skipper"
+    #             "Black Swallowtail", "Eastern Tiger Swallowtail (Female)", "Eastern Black Tiger Swallowtail (Female)",
+    #             "Palamedes Swallowtail",
+    #             "Pipevine Swallowtail", "Spicebush Swallowtail", "Zebra Swallowtail"],
+
+            # 'Species': ["Aaron's Skipper", "American Lady", "American Snout", "Black Swallowtail",
+            #             "Broad-winged Skipper", "Cabbage White", "Carolina Satyr", "Clouded Skipper",
+            #             "Clouded Sulfur", "Cloudless Sulfur", "Common Buckeye", "Dun Skipper", "Eastern Comma",
+            #             "Eastern Tiger Swallowtail (Female)", "Eastern Black Tiger Swallowtail (Female)",
+            #             "Eastern-tailed Blue", "Fiery Skipper", "Gemmed Satyr", "Gray Hairstreak",
+            #             "Great Southern White", "Horace's Duskywing", "Little Glassywing", "Little Wood Satyr",
+            #             "Long-tailed Skipper", "Monarch", "Ocola Skipper", "Painted lady", "Palamedes Swallowtail",
+            #             "Pearl Crescent", "Pipevine Swallowtail", "Question Mark", "Red Admiral",
+            #             "Red-banded Hairstreak", "Red-spotted Purple", "Salt Marsh Skipper", "Sleepy orange",
+            #             "Silver-spotted Skipper", "Spicebush Swallowtail", "Spring/Summer Azure",
+            #             "Variegated Fritillary", "Zabulon Skipper", "Zebra Swallowtail"],
     #         'Outer': ["",
     #                   "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Black_Tiger_Outer-Michelle_Gianvecchio.jpg",
     #                   "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zebra_Swallowtail_Outer-Michelle_Gianvecchio.jpg",
@@ -208,8 +251,6 @@ def main():
     # )
     #
     # html_view = convert_df(df)
-    # st.markdown(html_view, unsafe_allow_html=True)
-    # st.divider()
     # st.download_button(
     #      label="Download data as HTML",
     #      data=html_view,
