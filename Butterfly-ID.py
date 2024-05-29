@@ -20,7 +20,7 @@ def image_formatter(url):
         response.raise_for_status()
         current_image = Image.open(BytesIO(response.content))
         image_link = f'<img src="data:image/jpeg;base64,{image_to_base64(current_image)}" style="width:100%">'
-        fig_caption = 'Photo By: '+(re.search(r'.*-([^.]+)', url.removesuffix('jpg'))[1]).replace("_", " ")
+        fig_caption = '© '+(re.search(r'.*-([^.]+)', url.removesuffix('jpg'))[1]).replace("_", " ")
         return f'<p style="color:Gray; font-size: 0.75em;">{image_link + fig_caption}</p>'
     except Exception as e:
         # st.error(f"Error fetching image from URL: {e}")
@@ -36,7 +36,8 @@ def convert_df(input_df):
 def main():
     st.title("Butterflies of")
     st.subheader("Coastal Virginia 🦋")
-    st.divider()
+    st.markdown("#")
+    st.markdown("#")
 
     # Todo put expander in first column with species explanation, side-by-side comparison?
     # Todo change font size of species? Make photos have zoom
@@ -69,7 +70,8 @@ def main():
     st.subheader("Swallowtails (Papilionidae)")
     html_view2 = convert_df(df2)
     st.markdown(html_view2, unsafe_allow_html=True)
-    st.divider()
+    st.markdown("#")
+    st.markdown("#")
 
 
     df3 = pd.DataFrame(
@@ -100,7 +102,8 @@ def main():
     st.subheader("Whites and Sulfurs (Pieridae)")
     html_view3 = convert_df(df3)
     st.markdown(html_view3, unsafe_allow_html=True)
-    st.divider()
+    st.markdown("#")
+    st.markdown("#")
 
 
     df4 = pd.DataFrame(
@@ -154,16 +157,16 @@ def main():
     st.subheader("Gossamer wings (Lycaenidae)")
     html_view4 = convert_df(df4)
     st.markdown(html_view4, unsafe_allow_html=True)
-    st.divider()
-
+    st.markdown("#")
+    st.markdown("#")
 
     df5 = pd.DataFrame(
         {
-            'Species': ["Red Admiral", "Red-spotted Purple", "Monarch", "Viceroy", "Common Buckeye",
-                        "Silvery Checkerspot*", "Pearl Crescent", "Phaon Crescent*", "Mourning Cloak",
-                        "Eastern Comma*", "Question Mark", "Hackberry Emperor", "Tawny Emperor",
-                        "Great Spangled Fritillary*", "Gulf Fritillary*", "Variegated Fritillary",
-                        "American Lady", "Painted lady",
+            'Species': ["Red Admiral", "Red-spotted Purple", "Monarch", "Viceroy",
+                        "Common Buckeye", "Silvery Checkerspot*", "Pearl Crescent", "Phaon Crescent*",
+                        "Mourning Cloak", "Eastern Comma*", "Question Mark", "Hackberry Emperor",
+                        "Tawny Emperor", "Great Spangled Fritillary*", "Gulf Fritillary*",
+                        "Variegated Fritillary", "American Lady", "Painted lady",
                         "Northern Pearly-eye*", "Southern Pearly-eye*", "Creole Pearly-eye*",
                         "Appalachian Brown", "Carolina Satyr", "Gemmed Satyr", "Little Wood Satyr",
                         "Common Wood-Nymph", "American Snout"
@@ -231,7 +234,8 @@ def main():
     st.subheader("Brushfoots (Nymphalidae)")
     html_view5 = convert_df(df5)
     st.markdown(html_view5, unsafe_allow_html=True)
-    st.divider()
+    st.markdown("#")
+    st.markdown("#")
 
 
     df6 = pd.DataFrame(
@@ -242,13 +246,12 @@ def main():
                         "Hoary Edge*", "Little Glassywing",
                         "Common Roadside-Skipper*", " Lace-winged Roadside-Skipper*", "Reversed Roadside-Skipper*",
                         "Sachem", "Hayhurst’s Scallopwing*",
-                        "Aaron's Skipper", "Brazilian Skipper*", "Broad-winged Skipper",
-                        "Clouded Skipper", "Crossline Skipper", "Delaware Skipper*",
-                        "Dion Skipper*", "Dukes’ Skipper*", "Dun Skipper", "Dusted Skipper*", "Fiery Skipper",
-                        "Least Skipper", "Long-tailed Skipper*", "Ocola Skipper",
-                        "Peck’s Skipper*", "Pepper and Salt Skipper*", "Rare Skipper*",
-                        "Salt Marsh Skipper", "Silver-spotted Skipper", "Swarthy Skipper", "Tawny-edged Skipper*",
-                        "Yehl Skipper*", "Zabulon Skipper", "Common Sootywing"
+                        "Aaron's Skipper", "Brazilian Skipper*", "Broad-winged Skipper", "Clouded Skipper",
+                        "Crossline Skipper", "Delaware Skipper*", "Dion Skipper*", "Dukes’ Skipper*",
+                        "Dun Skipper", "Dusted Skipper*", "Fiery Skipper", "Least Skipper",
+                        "Long-tailed Skipper*", "Ocola Skipper", "Peck’s Skipper*", "Pepper and Salt Skipper*",
+                        "Rare Skipper*", "Salt Marsh Skipper", "Silver-spotted Skipper", "Swarthy Skipper",
+                        "Tawny-edged Skipper*", "Yehl Skipper*", "Zabulon Skipper", "Common Sootywing"
                         ],  # 41
             'Outer': ["",
                       "",
@@ -422,11 +425,12 @@ if __name__ == '__main__':
                     min-width: calc(20% - 1rem) !important;
                 }
                 table {
-                    width: fit-content;
+                    table-layout: fixed ;
+                    width: 100% ;
                     margin: auto;
                 }
                 .stDataframe tr {
-                    height: 250px; # use this to adjust the height
+                    height: 250px; 
                 }
                 [data-testid="stDataFrameResizable"] {
                     height: 250px;
