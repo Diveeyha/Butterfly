@@ -37,7 +37,6 @@ def main():
     st.title("Butterflies of")
     st.subheader("Coastal Virginia 🦋")
     st.markdown("#")
-    st.markdown("#")
 
     # Todo put expander in first column with species explanation, side-by-side comparison?
     # Todo change font size of species? Make photos have zoom
@@ -71,7 +70,6 @@ def main():
     html_view2 = convert_df(df2)
     st.markdown(html_view2, unsafe_allow_html=True)
     st.markdown("#")
-    st.markdown("#")
 
 
     df3 = pd.DataFrame(
@@ -102,7 +100,6 @@ def main():
     st.subheader("Whites and Sulfurs (Pieridae)")
     html_view3 = convert_df(df3)
     st.markdown(html_view3, unsafe_allow_html=True)
-    st.markdown("#")
     st.markdown("#")
 
 
@@ -157,7 +154,6 @@ def main():
     st.subheader("Gossamer wings (Lycaenidae)")
     html_view4 = convert_df(df4)
     st.markdown(html_view4, unsafe_allow_html=True)
-    st.markdown("#")
     st.markdown("#")
 
     df5 = pd.DataFrame(
@@ -234,7 +230,6 @@ def main():
     st.subheader("Brushfoots (Nymphalidae)")
     html_view5 = convert_df(df5)
     st.markdown(html_view5, unsafe_allow_html=True)
-    st.markdown("#")
     st.markdown("#")
 
 
