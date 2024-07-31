@@ -24,34 +24,41 @@ def image_formatter(url):
         return f'<p style="color:Gray; font-size: 0.75em;">{image_link + fig_caption}</p>'
     except Exception as e:
         # st.error(f"Error fetching image from URL: {e}")
-        return None
+        return ""
 
+# def sci_name_formatter(txt):
+#     return display( HTML( df.to_html().replace("\\n","<br>") ) )
 
 # @st.cache_data
 def convert_df(input_df):
     return input_df.to_html(escape=False, formatters=dict(Inner=image_formatter, Outer=image_formatter),
-                            index=False, header=False)
+                            index=False, header=False).replace("\\n", "<i><br>")
 
 
 def main():
     st.title("Butterflies of")
     st.subheader("Coastal Virginia 🦋")
     st.markdown("#")
-
+# f'<p style="color:Gray; font-size: 0.75em;">{image_link + fig_caption}</p>'
     # Todo put expander in first column with species explanation, side-by-side comparison?
     # Todo change font size of species? Make photos have zoom
     df2 = pd.DataFrame(
         {
-            'Species': ["Black Swallowtail", "Eastern Tiger Swallowtail (Female)",
-                        "Eastern Black Tiger Swallowtail (Female)", "Giant Swallowtail*", "Palamedes Swallowtail",
-                        "Pipevine Swallowtail*", "Spicebush Swallowtail", "Zebra Swallowtail"],  # 7
+            'Species': [f"Black Swallowtail\nPapilio polyxenes",
+                        "Eastern Tiger Swallowtail\nPapilio glaucus",
+                        "Eastern Black Tiger Swallowtail (Female)\nPapilio glaucus",
+                        "Giant Swallowtail*\nPapilio cresphontes",
+                        "Palamedes Swallowtail\nPapilio palamedes",
+                        "Pipevine Swallowtail*\nBattus philenor",
+                        "Spicebush Swallowtail\nPapilio troilus",
+                        "Zebra Swallowtail\nEurytides marcellus"],  # 7
             'Outer': ["",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Eastern_Tiger_Outer-eButterfly.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Black_Tiger_Outer-Michelle_Gianvecchio.jpg",
                       "",
                       "",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Spicebush_Outer-eButterfly.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Zebra_Swallowtail_Outer-Michelle_Gianvecchio.jpg",
                       ],
             'Inner': ["",
@@ -60,10 +67,9 @@ def main():
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Palamedes_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pipevine_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Spicebush_Swallowtail_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Spicebush_Swallowtail_Inner-Wikipedia.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Zebra_Swallowtail_Inner-Michelle_Gianvecchio.jpg"
                       ],
-
         }
     )
     st.subheader("Swallowtails (Papilionidae)")
@@ -74,24 +80,30 @@ def main():
 
     df3 = pd.DataFrame(
         {
-            'Species': ["Cabbage White", "Checkered White*", "Clouded Sulfur", "Cloudless Sulfur", "Falcate Orangetip",
-                        "Little Yellow*", "Orange Sulfur", "Sleepy orange"],  # 8
+            'Species': ["Cabbage White\nPieris rapae",
+                        "Checkered White*\nPontia protodice",
+                        "Clouded Sulfur\nColias philodice",
+                        "Cloudless Sulfur\nPhoebis sennae",
+                        "Falcate Orangetip\nAnthocharis midea",
+                        "Little Yellow*\nEurema lisa",
+                        "Orange Sulfur\nColias eurytheme",
+                        "Sleepy orange\nEurema nicippe"],  # 8
             'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cabbage_White_Outer-Michelle_Gianvecchio.jpg",
                       "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Clouded_Sulfur_Outer-eButterfly.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cloudless_Sulphur_Outer-Wikipedia.JPG",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Falcate_Orangetip_Outer-Wikipedia.jpg",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Cloudless_Sulfur_Outer-Michelle_Gianvecchio.jpg",
-                      "",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Sleepy_orange_Outer-Michelle_Gianvecchio.jpg"
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Orange_Sulfur_Outer-eButterfly.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Sleepy_orange_Outer-Michelle_Gianvecchio.jpg",
                       ],
-            'Inner': ["",
+            'Inner': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Cabbage_White_Inner-Wikipedia.jpg",
                       "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Clouded_Sulfur_Inner-Wikipedia.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Cloudless_Sulfur_Inner-Wikipedia.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Falcate_Orangetip_Inner-Wikipedia.jpg",
                       "",
-                      "",
-                      "",
-                      "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Orange_Sulfur_Inner-Wikipedia.jpg",
                       ""
                       ],
         }
@@ -105,17 +117,30 @@ def main():
 
     df4 = pd.DataFrame(
         {
-            'Species': ["Summer Azure", "Eastern-tailed Blue", "American Copper*", "Bronze Copper*", "Brown Elfin*",
-                        "Henry’s Elfin", "Eastern Pine Elfin*", "Banded Hairstreak*", "Coral Hairstreak*",
-                        "Gray Hairstreak", "Great Purple Hairstreak*", "Juniper Hairstreak*", "King's Hairstreak*",
-                        "Oak Hairstreak*", "Red-banded Hairstreak", "Striped Hairstreak*", "White M Hairstreak*",
-                        "Harvester*"],  # 18
-            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Summer_Azure_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Eastern_tailed_Blue_Outer-Michelle_Gianvecchio.jpg",
+            'Species': ["Summer Azure\nCelastrina neglecta",
+                        "Eastern-tailed Blue\nCupido comyntas",
+                        "American Copper*\nLycaena phlaeas",
+                        "Bronze Copper*\nLycaena hyllus",
+                        "Brown Elfin*\nCallophrys augustinus",
+                        "Henry’s Elfin\nCallophrys henrici",
+                        "Eastern Pine Elfin*\nCallophrys niphon",
+                        "Banded Hairstreak*\nSatyrium calanus",
+                        "Coral Hairstreak*\nSatyrium titus",
+                        "Gray Hairstreak\nStrymon melinus",
+                        "Great Purple Hairstreak*\nAtlides halesus",
+                        "Juniper Hairstreak*\nCallophrys gryneus",
+                        "King's Hairstreak*\nSatyrium kingi",
+                        "Oak Hairstreak*\nSatyrium favonius",
+                        "Red-banded Hairstreak\nCalycopis cecrops",
+                        "Striped Hairstreak*\nSatyrium liparops",
+                        "White M Hairstreak*\nParrhasius m-album",
+                        "Harvester*\nFeniseca tarquinius"],  # 18
+            'Outer': ["https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Summer_Azure_Outer-eButterfly.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Easten-tailed_Blue_Outer-Wikipedia.jpg",
                       "",
                       "",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Henry's_Elfin_Outer-Wikipedia.jpg",
                       "",
                       "",
                       "",
@@ -130,7 +155,7 @@ def main():
                       ""
                       ],
             'Inner': ["",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Eastern-tailed_Blue_Inner-Wikipedia.jpg",
                       "",
                       "",
                       "",
@@ -158,32 +183,51 @@ def main():
 
     df5 = pd.DataFrame(
         {
-            'Species': ["Red Admiral", "Red-spotted Purple", "Monarch", "Viceroy",
-                        "Common Buckeye", "Silvery Checkerspot*", "Pearl Crescent", "Phaon Crescent*",
-                        "Mourning Cloak", "Eastern Comma*", "Question Mark", "Hackberry Emperor",
-                        "Tawny Emperor", "Great Spangled Fritillary*", "Gulf Fritillary*",
-                        "Variegated Fritillary", "American Lady", "Painted lady",
-                        "Northern Pearly-eye*", "Southern Pearly-eye*", "Creole Pearly-eye*",
-                        "Appalachian Brown", "Carolina Satyr", "Gemmed Satyr", "Little Wood Satyr",
-                        "Common Wood-Nymph", "American Snout"
+            'Species': ["Red Admiral\nVanessa atalanta",
+                        "Red-spotted Purple\nLimenitis arthemis",
+                        "Monarch\nDanaus plexippus",
+                        "Viceroy\nLimenitis archippus",
+                        "Common Buckeye\nJunonia coenia",
+                        "Silvery Checkerspot*\nChlosyne nycteis",
+                        "Pearl Crescent\nPhyciodes tharos",
+                        "Phaon Crescent*\nPhyciodes phaon",
+                        "Mourning Cloak\nNymphalis antiopa",
+                        "Eastern Comma*\nPolygonia comma",
+                        "Question Mark\nPolygonia interrogationis",
+                        "Hackberry Emperor\nAsterocampa celtis",
+                        "Tawny Emperor\nAsterocampa clyton",
+                        "Great Spangled Fritillary*\nSpeyeria cybele",
+                        "Gulf Fritillary*\nDione vanillae",
+                        "Variegated Fritillary\nEuptoieta claudia",
+                        "American Lady\nVanessa virginiensis",
+                        "Painted lady\nVanessa cardui",
+                        "Northern Pearly-eye*\nLethe anthedon",
+                        "Southern Pearly-eye*\nEnodia portlandia",
+                        "Creole Pearly-eye*\nEnodia creola",
+                        "Appalachian Brown\nSatyrodes appalachia",
+                        "Carolina Satyr\nHermeuptychia sosybius",
+                        "Gemmed Satyr\nCyllopsis gemma",
+                        "Little Wood Satyr\nMegisto cymela",
+                        "Common Wood-Nymph\nCercyonis pegala",
+                        "American Snout\nLibytheana carinenta"
                         ],  # 27
 
             'Outer': ["",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Monarch_Outer-Michelle_Gianvecchio.jpg",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Common_Buckeye_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Common_Buckeye_Outer-Wikipedia.jpg",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Pearl_Crescent_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Pearl_Crescent_Outer-Wikipedia.jpg",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Mourning_Cloak_Outer-Wikipedia.JPG",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Question_Mark_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Hackberry_Emperor_Outer-eButterfly.jpg",
                       "",
                       "",
                       "",
-                      "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Variegated_Fritillary_Outer-Wikipedia.JPG",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/American_Lady_Outer-Michelle_Gianvecchio.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Painted_Lady_Outer-Michelle_Gianvecchio.jpg",
                       "",
@@ -201,18 +245,18 @@ def main():
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Monarch_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Common_Buckeye_Inner-Michelle_Gianvecchio.jpg",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Silvery_Checkerspot_Inner-eButterfly.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Pearl_Crescent_Inner-Michelle_Gianvecchio.jpg",
                       "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Mourning_Cloak_Inner-Wikipedia.jpg",
+                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Question_Mark_Inner-Wikipedia.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Hackberry_Emperor_Inner-Wikipedia.jpg",
                       "",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Question_Mark_Inner-Michelle_Gianvecchio.jpg",
                       "",
-                      "",
-                      "",
-                      "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Variegated_Fritillary_Inner-Michelle_Gianvecchio.jpg",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Variegated_Fritillary_Inner-eButterfly.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/American_Lady_Inner-Wikipedia.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Painted_Lady_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "",
@@ -222,7 +266,7 @@ def main():
                       "",
                       "",
                       "",
-                      ""
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/American_Snout_Inner-Wikipedia.jpg"
                       ],
         }
     )
@@ -235,18 +279,47 @@ def main():
 
     df6 = pd.DataFrame(
         {
-            'Species': ["Northern Broken-Dash", "Southern Broken-Dash", "Common Checkered-Skipper",
-                        "Confused Cloudywing*", "Northern Cloudywing*", "Southern Cloudywing*",
-                        "Horace’s Duskywing", "Juvenal’s Duskywing", "Wild Indigo Duskywing", "Zarucco Duskywing*",
-                        "Hoary Edge*", "Little Glassywing",
-                        "Common Roadside-Skipper*", " Lace-winged Roadside-Skipper*", "Reversed Roadside-Skipper*",
-                        "Sachem", "Hayhurst’s Scallopwing*",
-                        "Aaron's Skipper", "Brazilian Skipper*", "Broad-winged Skipper", "Clouded Skipper",
-                        "Crossline Skipper", "Delaware Skipper*", "Dion Skipper*", "Dukes’ Skipper*",
-                        "Dun Skipper", "Dusted Skipper*", "Fiery Skipper", "Least Skipper",
-                        "Long-tailed Skipper*", "Ocola Skipper", "Peck’s Skipper*", "Pepper and Salt Skipper*",
-                        "Rare Skipper*", "Salt Marsh Skipper", "Silver-spotted Skipper", "Swarthy Skipper",
-                        "Tawny-edged Skipper*", "Yehl Skipper*", "Zabulon Skipper", "Common Sootywing"
+            'Species': ["Northern Broken-Dash\nWallengrenia egeremet",
+                        "Southern Broken-Dash\nWallengrenia otho",
+                        "Common Checkered-Skipper\nPyrgus communis",
+                        "Confused Cloudywing*\nThorybes confusis",
+                        "Northern Cloudywing*\nThorybes pylades",
+                        "Southern Cloudywing*\nThorybes bathyllus",
+                        "Horace’s Duskywing\nErynnis horatius",
+                        "Juvenal’s Duskywing\nErynnis juvenalis",
+                        "Wild Indigo Duskywing\nErynnis baptisiae",
+                        "Zarucco Duskywing*\nErynnis zarucco",
+                        "Hoary Edge*\nAchalarus lyciades",
+                        "Little Glassywing\nPompeius verna",
+                        "Common Roadside-Skipper*\nAmblyscirtes vialis",
+                        "Lace-winged Roadside-Skipper*\nAmblyscirtes aesculapius",
+                        "Reversed Roadside-Skipper*\nAmblyscirtes reversa",
+                        "Sachem\nAtalopedes campestris",
+                        "Hayhurst’s Scallopwing*\nStaphylus hayhurstii",
+                        "Aaron's Skipper\nPoanes aaroni",
+                        "Brazilian Skipper*\nCalpodes ethlius",
+                        "Broad-winged Skipper\nPoanes viator",
+                        "Clouded Skipper\nLerema accius",
+                        "Crossline Skipper\nPolites origenes",
+                        "Delaware Skipper*\nAnatrytone logan",
+                        "Dion Skipper*\nEuphyes dion",
+                        "Dukes’ Skipper*\nEuphyes dukesi",
+                        "Dun Skipper\nEuphyes vestris",
+                        "Dusted Skipper*\nAtrytonopsis hianna",
+                        "Fiery Skipper\nHylephila phyleus",
+                        "Least Skipper\nAncyloxypha numitor",
+                        "Long-tailed Skipper*\nUrbanus proteus",
+                        "Ocola Skipper\nPanoquina ocola",
+                        "Peck’s Skipper*\nPolites peckius",
+                        "Pepper and Salt Skipper*\nAmblyscirtes hegon",
+                        "Rare Skipper*\nProblema bulenta",
+                        "Salt Marsh Skipper\nPanoquina panoquin",
+                        "Silver-spotted Skipper\nEpargyreus clarus",
+                        "Swarthy Skipper\nNastra lherminier",
+                        "Tawny-edged Skipper*\nPolites themistocles",
+                        "Yehl Skipper*\nPoanes yehl",
+                        "Zabulon Skipper\nPoanes zabulon",
+                        "Common Sootywing\nPholisora catullus"
                         ],  # 41
             'Outer': ["",
                       "",
@@ -277,13 +350,13 @@ def main():
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Fiery_Skipper_Outer-Michelle_Gianvecchio.jpg",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Long-tailed_Skipper_Outer-Wikipedia.JPG",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Ocola_Skipper_Outer-Michelle_Gianvecchio.jpg",
                       "",
                       "",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Salt_Marsh_Skipper_Outer-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Silver_spotted_Skipper_Outer-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Outer/Silver-spotted_Skipper_Outer-Wikipedia.jpg",
                       "",
                       "",
                       "",
@@ -292,7 +365,7 @@ def main():
                       ],
             'Inner': ["",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Common_Checkered-Skipper_Inner-Wikipedia.JPG",
                       "",
                       "",
                       "",
@@ -301,7 +374,7 @@ def main():
                       "",
                       "",
                       "",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Little_Glassywing_Inner-Michelle_Gianvecchio.jpg",
+                      "",
                       "",
                       "",
                       "",
@@ -310,7 +383,7 @@ def main():
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Aarons_Skipper_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Broad_winged_Skipper_Inner-Michelle_Gianvecchio.jpg",
-                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Clouded_Skipper_Inner-Michelle_Gianvecchio.jpg",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Clouded_Skipper_Inner-eButterfly.jpg",
                       "",
                       "",
                       "",
@@ -318,7 +391,7 @@ def main():
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Dun_Skipper_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "",
-                      "",
+                      "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Least_Skipper_Inner-eButterfly.jpg",
                       "https://raw.githubusercontent.com/Diveeyha/Butterfly/main/Inner/Long_tailed_Skipper_Inner-Michelle_Gianvecchio.jpg",
                       "",
                       "",
